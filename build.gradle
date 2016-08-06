@@ -11,6 +11,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
+// Use antlr uncomment here
+// apply plugin: 'antlr'
+
 mainClassName = 'CHANGE ME'           // ex) Library
 def executableBaseName = "CHANGE ME"  // ex) java_test 
 
@@ -27,6 +30,8 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     // compile 'org.yaml:snakeyaml:1.16'
 
+    // Use antlr uncomment here
+    // antlr "org.antlr:antlr4:4.5.3"
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
@@ -45,3 +50,11 @@ task executableJar(type: Jar, dependsOn: jar)  {
     from "$buildDir/classes/main"
     from "$buildDir/resources/main"
 }
+
+// Use antlr uncomment here
+//generateGrammarSource {
+////    maxHeapSize = "64m"
+//    arguments += ["-visitor", "-long-messages"]
+////    arguments += ["-no-visitor", "-listener", "-long-messages"]
+//    arguments += ["-visitor", "-long-messages", "-no-listener"]
+//}
